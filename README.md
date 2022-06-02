@@ -58,6 +58,7 @@ fetch('/api/pizzas', {
 
 Now moving over to /public/assets/js/idb.js we can see what happens when the saveRecord() function is invoked.  
 First a new transaction is opened and two values are passed in, "new_pizza" is the object store (table) that I want to access, and "readwrite" which gives read and write permissions.  
+  
 Then I access the "new_pizza" object store, and on the next line I use the .add() method and pass in "record", which is the pizza.
 ```
 function saveRecord(record) {
@@ -108,7 +109,7 @@ function uploadPizza() {
                                                                                              ||
                     const pizzaObjectStore = transaction.objectStore('new_pizza');           || 
                                                                                              ||
-                    pizzaObjectStore.clear();                                                || ================== 3
+                    pizzaObjectStore.clear();                                                || ========== 3
                                                                                              ||
                     alert('All saved pizza has been submitted!');                            || 
                 })                                                                           ||
